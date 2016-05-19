@@ -4,6 +4,16 @@
 	<meta charset="UTF-8">
 	<title>SmallSorting</title>
 	<style type="text/css">
+		body {
+			background: #EDF2F3;
+		}
+
+		.gitBut {
+			text-align: center;
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 10px;
+		}
+
 		.wrapper {
 			width: 1000px;
 			margin: 10px auto;
@@ -11,9 +21,11 @@
 
 		.wrapper nav ul {
 			list-style: none;
-			background: blue;
+			border-bottom: 1px solid #ccc; 
 			padding: 0;
 			text-align: center;
+			font-size: 0;
+			margin-bottom: 13px;
 		}
 
 		.wrapper li {
@@ -21,38 +33,59 @@
 			font-size: 28px;
 			color: white;
 			display: inline-block;
-			width: 80px;
-			background: #ccc;
+			text-transform: uppercase;
+			cursor: pointer;
+			padding: 0 10px;
 		}
 
 		.wrapper li:hover {
-			background: #fff;
-			color: #ccc;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;			
+		}
+
+		.wrapper li[data-category="categoryOne"] {
+			color: #E01931;
+		}
+
+		.wrapper li[data-category="categoryTwo"] {
+			color: #2C82C9;
+		}
+
+		.wrapper li[data-category="categoryThree"] {
+			color: #2CC990;
 		}
 
 		.wrapper .sortElems {
 			width: 163px;
 			height: 163px;
+			margin-bottom: 10px;
 			display: inline-block;
-			opacity: 1;
+			border-radius: 5%;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
 		}
 
 		.wrapper .categoryOne {
-			background: red;
+			background: #E01931;
 		}
 
 		.wrapper .categoryTwo {
-			background: blue;
+			background: #2C82C9;
 		}
 
 		.wrapper .categoryThree {
-			background: green;
+			background: #2CC990;
 		}
+
 	</style>
 </head>
 <body>
 	<div class="wrapper">
-
+		<div class="gitBut">
+			<a class="github-button" href="https://github.com/Yaroshuk" data-style="mega" data-count-href="/Yaroshuk/followers" data-count-api="/users/Yaroshuk#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @Yaroshuk on GitHub">Follow @Yaroshuk</a>
+			<a class="github-button" href="https://github.com/Yaroshuk/small_sorting" data-style="mega" data-count-href="/	Yaroshuk/small_sorting/watchers" data-count-api="/repos/Yaroshuk/small_sorting#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch Yaroshuk/small_sorting on GitHub">Watch</a>
+			<a class="github-button" href="https://github.com/Yaroshuk/small_sorting/archive/master.zip" data-style="mega" aria-label="Download Yaroshuk/small_sorting on GitHub">Download</a>
+		</div>
 		<nav><ul>
 			<li class="sortBtns" data-category="all"><span>all</span></li>		
 			<li class="sortBtns" data-category="categoryOne"><span>red</span></li>
@@ -78,6 +111,8 @@
 			<div class="sortElems categoryTwo"></div>
 		</div>
 	</div>
+
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<script type="text/javascript" src="./js/SmallSorting.js"></script>
 	<script type="text/javascript">
 		Sorting.start();
